@@ -25,7 +25,7 @@ app.use(cookieParser());
 app.use(
 	cors({
 		origin: process.env.NODE_ENV === "production" 
-			? ["https://skillmart-ce.vercel.app", "http://localhost:3000"]
+			? [process.env.FRONTEND_URL || "https://skillmart-frontend.vercel.app", "http://localhost:3000"]
 			: "http://localhost:3000",
 		credentials:true,
 	})
